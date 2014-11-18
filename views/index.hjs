@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    
+    <script src='/javascripts/checkin2.js'></script>    
+  </head>
+  <body>
+    <h1>Event Check-In</h1>
+    <p>Welcome to the conference.  Please sign in so we can bother you with emails from our company.</p>
+    
+
+    
+    <form id='checkIn'>
+    <div id="errors"></div>
+    <div class='panel panel-default'>
+        <div class='panel-heading'>
+          <h2 class='panel-title'>Required Information</h>
+        </div>
+        <div class='panel-body'>
+          <div class='row'>
+          <div class='col-md-3 col-lg-3'>
+          <input id="firstName" type="text" placeholder="first name" required class='form-control' />
+          </div>
+          </div>
+
+          <div class='row'>
+          <div class='col-md-4 col-lg-4'>
+          <input id="lastName" type="text" placeholder="last name" required class='form-control' />
+          <input id="email" type="email" placeholder="email address" required class='form-control' />
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class='panel panel-default'>
+        <div class='panel-heading'>
+          <h2 class='panel-title'>Optional Information</h>
+        </div>
+        <div class='panel-body'>
+          <div class='form-group'>
+            <label for='contribution'>Contribution</label>
+            <input id="contribution" type="number" min="0" max="100" step="5" value="0" class='form-control' />
+          </div>
+          <div class='form-group'>
+            <label for='bday'>Date of Birth</label>          
+            <input id="bday" type="date" placeholder="birthday" class='form-control' />
+          </div>
+          <div class='form-group'>
+            <label for='firstTime'>First time to our conference?</label>          
+            <input id="firstTime" type="checkbox" value="first" />
+          </div>
+          <div class='form-group'>
+            <label for='sex'>Gender</label>          
+            <input name="sex" id="male" type="radio" value="male" checked />Male&nbsp;&nbsp;
+            <input name="sex" id="female" type="radio" value="female" />Female
+          </div>
+        </div>
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

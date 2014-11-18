@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script src='/socket.io/socket.io.js'></script>    
+    <script src='/javascripts/admin.js'></script>     
+  </head>
+  <body>
+    <div class='container'>
+      <div class='jumbotron'>
+        <h1>Event Check-In List</h1>
+        <p>Here are the attendees that we'll wine and dine.</p>
+      </div
+    </div>
+
+    
+    <div class='table-responsive'>
+    <table class='table table-hover table-bordered table-striped'>
+    <caption>Attendees</caption>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Email</th>
+      <th>Contribution</th>
+      <th>DOB</th>
+      <th>New Attendee</th>      
+      <th>Sex</th>      
+    </tr>
+    {{#attendees}}
+    <tr>
+      <td>
+      {{ fname }}
+      </td>
+      <td>
+      {{ lname }}
+      </td>
+      <td>
+      {{ email }}
+      </td>
+      <td>
+      {{ contrib }}
+      </td>
+      <td>
+      {{ dob }}
+      </td>
+      <td>
+      {{ newAttendee }}
+      </td>
+      <td>
+      {{ gender }}
+      </td>
+      </tr>
+    
+    {{/attendees}}
+    </table>
+    </div>
+    
+    <p>Total Users: {{ total }}</p>
+    
+    <div id='divAttendees'></div>
+    
+    <script id='attendee-table' type='text/template'>
+      <thead>
+    <tr>
+      <th>Edit</th>
+      <th>First</th>
+      <th>Last</th>
+      <th class='hidden-xs hidden-sm'>Email</th>
+      <th>Contribution</th>
+      <th class='hidden-xs'>DOB</th>
+      <th>New Attendee</th>      
+      <th>Sex</th>      
+      <th class='hidden-md hidden-lg'>More</th>
+    </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </script>
+    <script id='attendee-row' type='text/template'>
+      <td><div><a href='#' class='btn'><%= _id %><span class='glyphicon glyphicon-pencil'></span></a></div></td>
+      <td><div><%= fname %></div></td>
+      <td><div><%= lname %></div></td>
+      <td class='hidden-xs hidden-sm'><div><%= email %></div></td>
+      <td><div><%= contrib %></div></td>
+      <td class='hidden-xs'><div><%= (new Date(dob)).toLocaleDateString() %></div></td>
+      <td><div><%= newAttendee %></div></td>
+      <td><div><%= gender %></div></td>
+      <td class='hidden-md hidden-lg'>
+        <a href='javascript:showMore(<%= _id %>)' class='btn'>More
+        <span class='glyphicon glyphicon-chevron-right'>
+        </span>
+        </a>
+      </td>      
+    </script>
+  </body>
+      <script src='/javascripts/bbAttendee.js'></script>   
+</html>

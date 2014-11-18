@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: LightGoldenRodYellow ;
+}
+
+#errors {
+  display: none;
+  background: #f99;
+}
+
+a {
+  color: #00B7FF;
+}
+input {
+  margin-bottom:20px;
+  background-color: BlanchedAlmond; 
+}
+
+input.error {
+  border: 2px solid red;
+}
